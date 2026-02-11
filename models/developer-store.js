@@ -1,0 +1,15 @@
+const developerStore = {
+  getAppInfo() {
+    return {
+      name: "Stevie",
+      fullname: "Stevie Feliciano",
+      image: "/stevie.jpg",
+      joined: 2016,
+      job: "Web Developer",
+      city: "Boston",
+      mates: 35
+    };
+  }
+};
+
+module.exports = developerStore;
