@@ -16,14 +16,14 @@
       <h3 class="ui header">
         {{title}}
       </h3>
-      <p>
+        <section class="ui message">
         if ({{songs.length}} === 0){
           Empty playlist!
         }
         else {
        {{total}}{{songs.length}} 
         }
-      </p>
+        </section>
       <a href="/playlist/{{id}}"> View </a>
     </section>
   {{/each}}
