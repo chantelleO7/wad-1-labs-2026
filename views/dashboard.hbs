@@ -16,6 +16,9 @@
       <h3 class="ui header">
         {{title}}
       </h3>
+      {{# if songs}}
+        <p>Total songs: {{songs.length}}</p>
+        {{/if}}
       <a href="/playlist/{{id}}"> View </a>
     </section>
   {{/each}}
