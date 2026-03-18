@@ -3,7 +3,7 @@
     {
       "id" : "01",
       "title": "Beethoven Sonatas",
-      "total": "Total songs: {{songs.length}}",
+      "total": "Total songs: ",
       "songs": [
         {
           "id" : "04",
@@ -25,7 +25,7 @@
     {
       "id" : "02",
       "title": "Beethoven Concertos",
-      "total": "Total songs:{{songs.length}}",
+      "total": "Total songs: ",
       "songs": [
         {
           "id" : "07",
