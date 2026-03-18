@@ -2,6 +2,11 @@
 
 <section class="ui center aligned middle aligned segment">
   <h2>Welcome to the Playlist App!</h2>
+  {{#unless playlists}}
+    <h3 class="ui message">
+      Start adding your playlists!
+    </h3>
+{{/unless}}
     <p>
       This app will allow users to create and maintain a collection of playlists.
     </p>
