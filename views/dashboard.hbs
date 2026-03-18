@@ -18,6 +18,8 @@
       </h3>
       {{# if songs}}
         <p>Total songs: {{songs.length}}</p>
+        {{else}}
+        <p>Empty playlist!</p>
         {{/if}}
       <a href="/playlist/{{id}}"> View </a>
     </section>
