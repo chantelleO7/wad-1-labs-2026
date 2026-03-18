@@ -17,7 +17,12 @@
         {{title}}
       </h3>
       <p>
+        if ({{songs.length}} === 0){
+          Empty playlist!
+        }
+        else {
        {{total}}{{songs.length}} 
+        }
       </p>
       <a href="/playlist/{{id}}"> View </a>
     </section>
