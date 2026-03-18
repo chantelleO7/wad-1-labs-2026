@@ -1,19 +1,18 @@
 'use strict';
 
 import logger from "../utils/logger.js";
-import appStore from "../models/app-store.js";
+import aboutStore from "../models/about-store.js";
 
 const start = {
   createView(request, response) {
     logger.info("Start page loading!");
     
-    const viewData = {
+    const createView = {
       title: "Welcome to the Playlist app!",
-      info: appStore.getAppInfo()
+      info: aboutStore.getAppInfo()
     };
-    
-    //logger.debug(viewData);
-    response.render('start', viewData);   
+  
+    response.render('start', createView);   
   },
 };
 
