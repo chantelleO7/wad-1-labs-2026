@@ -47,7 +47,7 @@
     {
       "id" : "03",
       "title": "Beethoven Unfinished Symphonies",
-      "total": "Total songs:{{songs.length}}",
+      "total": "Total songs: ",
       "songs": []
     }
   ]
