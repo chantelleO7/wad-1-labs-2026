@@ -21,21 +21,7 @@
       
     <table class="ui unstackable striped table">
         <thead>
-            <tr>
-              <th>Song</th>
-              <th>Artist</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each songs}}
-              <tr>
-                <td>
-                  {{title}}
-                </td>
-                <td>
-                  {{artist}}
-                </td>
-              </tr>
+      <a href="/playlist/{{id}}"> View </a>
             {{/each}}
         </tbody>
     </table>
@@ -43,8 +29,6 @@
         Empty playlist!
 {{/if}}
       </p>
-      <a href="/playlist/{{id}}"> View </a>
-    </section>
   {{/each}}
 
 </section>
