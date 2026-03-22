@@ -1,7 +1,6 @@
 {{> menu id="about"}}
 
 <section class="ui center aligned middle aligned segment">
-  {{#each employees}}
   <h2 class="ui header">
     About the Playlist App
   </h2>
@@ -10,6 +9,7 @@
   </p>
 
   <div class="ui centered card">
+    {{#each employees}}
     <div class="image">
       <img src="{{image}}">
     </div>
@@ -25,7 +25,7 @@
     <div class="extra content">
       <a>
         <i class="user icon"></i>
-        {{employee.mates}} contacts
+        {{mates}} contacts
       </a>
     </div>
   </div>

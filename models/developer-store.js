@@ -1,5 +1,6 @@
-{
-  "employees" ; [
+export const developerStore = {
+
+  "employees" : [
        {
         "name":"Stevie",
         "fullname":"Stevie Feliciano",
@@ -7,7 +8,7 @@
         "joined":2016,
         "job":"Web Developer",
         "city":"Boston",
-		"mates": 35
+		    "mates": 35
        },
        {
         "name":"Helen",
@@ -16,7 +17,7 @@
         "joined":2013,
         "job":"Art Director",
         "city":"New York",
-	    "mates": 22
+	      "mates": 22
        },
        {
         "name":"Jenny",
@@ -25,7 +26,7 @@
         "joined":2014,
         "job":"UX Designer",
         "city":"Manhatten",
-		"mates": 30
+		    "mates": 30
        }
       ]
 }
