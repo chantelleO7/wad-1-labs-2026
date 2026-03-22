@@ -1,6 +1,7 @@
 {{> menu id="about"}}
 
 <section class="ui center aligned middle aligned segment">
+  {{#each employees}}
   <h2 class="ui header">
     About the Playlist App
   </h2>
@@ -10,15 +11,15 @@
 
   <div class="ui centered card">
     <div class="image">
-      <img src="{{employee.image}}">
+      <img src="{{image}}">
     </div>
     <div class="content">
-      <a class="header">{{employee.fullname}}</a>
+      <a class="header">{{fullname}}</a>
       <div class="meta">
-        <span class="date">Joined in {{employee.joined}}</span>
+        <span class="date">Joined in {{joined}}</span>
       </div>
       <div class="description">
-        {{employee.name}} is a {{employee.job}} living in {{employee.city}}.
+        {{name}} is a {{job}} living in {{city}}.
       </div>
     </div>
     <div class="extra content">
@@ -28,4 +29,5 @@
       </a>
     </div>
   </div>
+  {{/each}}
 </section>
