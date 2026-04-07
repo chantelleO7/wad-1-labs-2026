@@ -26,14 +26,17 @@ const dashboard = {
   },
 
   addPlaylist(request, response) {
-    const newPlayList = {
+    const timestamp = new Date();
+    
+    const newPlaylist = {
       id: uuidv4(),
       title: request.body.title,
-      songs: [],
+	  date: timestamp,
+      songs: []
     };
-    playlistStore.addPlaylist(newPlayList);
-    response.redirect("/dashboard");
-  }
+    playlistStore.addPlaylist(newPlaylist);
+    response.redirect('/dashboard');
+  },
 };
 
 export default dashboard;
