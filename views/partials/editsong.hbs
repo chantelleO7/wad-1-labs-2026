@@ -1,5 +1,5 @@
 <form class="ui stacked segment form" method="POST" action="/playlist/{{playlistId}}/updatesong/{{id}}" >
-  <tr class="hide" id="edit">
+  <<tr class="hide" id="edit{{@index}}">>
     <td>
       <span class="ui input">
         <input type="text" name="title" autofocus required
@@ -15,8 +15,8 @@
       </span>
     </td>
     <td class="center aligned">
-        <button type = "reset" class = "editSubmit" id="hideEdit" 
-                title="Exit without saving">
+        <button type = "reset" class = "editSubmit" id="hideEdit{{@index}}" 
+            title="Exit without saving">
             <i class="ui undo icon"></i>
         </button>
     </td>
