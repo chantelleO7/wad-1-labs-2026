@@ -19,8 +19,14 @@ const handlebars = create({
       return inputString.toUpperCase();
     },
     formatDate: (date) => {
-      const dateObj = new Date(date);
-      return `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+    let dateCreated = new Date(date);
+    let options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "2-digit",
+    };
+    return `${dateCreated.toLocaleDateString("en-IE", options)}`;
     },
   },
 });
