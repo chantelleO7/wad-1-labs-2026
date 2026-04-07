@@ -1,8 +1,8 @@
 'use strict';
 
 import express from 'express';
-import routes from "./routes.js";
 import logger from "./utils/logger.js";
+import routes from './routes.js'; 
 import { create } from 'express-handlebars';
 import bodyParser from "body-parser";
 
@@ -12,7 +12,14 @@ const port = 3000;
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false, }));
 
-const handlebars = create({extname: '.hbs'});
+const handlebars = create({
+  extname: '.hbs', 
+    helpers: {
+      uppercase: (inputString) => {
+        return inputString.toUpperCase();
+      },
+    },
+});
 app.engine(".hbs", handlebars.engine);
 app.set("view engine", ".hbs");
 
