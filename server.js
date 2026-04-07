@@ -14,13 +14,15 @@ app.use(bodyParser.urlencoded({ extended: false, }));
 
 const handlebars = create({
   extname: '.hbs', 
-   helpers: {
-        formatDate: (date) => {
-            const dateObj = new Date(date); // Pass 'date' inside the parentheses
-            const dateString = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
-            return dateString;
-        },
+  helpers: {
+    uppercase: (inputString) => {
+      return inputString.toUpperCase();
     },
+    formatDate: (date) => {
+      const dateObj = new Date(date);
+      return `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+    },
+  },
 });
 app.engine(".hbs", handlebars.engine);
 app.set("view engine", ".hbs");
