@@ -7,25 +7,23 @@ import { v4 as uuidv4 } from 'uuid';
 const dashboard = {
   createView(request, response) {
     logger.info("Dashboard page loading!");
-    
+
+    const searchTerm = request.query.searchTerm || "";
+
+    const playlists = searchTerm
+      ? playlistStore.searchPlaylist(searchTerm)
+      : playlistStore.getAllPlaylists();
+
     const viewData = {
       title: "Playlist App Dashboard",
-      playlists: playlistStore.getAllPlaylists()
+      playlists:  playlists,
+      search: searchTerm
     };
-    
+
     logger.debug(viewData.playlists);
-    
-    response.render('dashboard', viewData);
+
+    response.render("dashboard", viewData);
   },
-  addPlaylist(request, response) {
-    const newPlayList = {
-      id: uuidv4(),
-      title: request.body.title,
-      songs: [],
-    };
-    playlistStore.addPlaylist(newPlayList);
-    response.redirect('/dashboard');
-},
 };
 
 export default dashboard;
