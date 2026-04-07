@@ -24,6 +24,16 @@ const dashboard = {
 
     response.render("dashboard", viewData);
   },
+
+  addPlaylist(request, response) {
+    const newPlayList = {
+      id: uuidv4(),
+      title: request.body.title,
+      songs: [],
+    };
+    playlistStore.addPlaylist(newPlayList);
+    response.redirect("/dashboard");
+  }
 };
 
 export default dashboard;

@@ -31,7 +31,7 @@ editSong(id, songId, updatedSong) {
 },
 
 searchPlaylist(search) {
-    return this.store.findBy(
+    return this.store.findAllBy(
       this.collection,
       (playlist => playlist.title.toLowerCase().includes(search.toLowerCase())))
 }
