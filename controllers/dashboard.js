@@ -23,8 +23,7 @@ const dashboard = {
     logger.debug(viewData.playlists);
 
     response.render("dashboard", viewData);
-  },
-
+},
   addPlaylist(request, response) {
     const timestamp = new Date();
     
