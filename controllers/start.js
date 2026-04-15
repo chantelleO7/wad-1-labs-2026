@@ -2,18 +2,23 @@
 
 import logger from "../utils/logger.js";
 import aboutStore from "../models/about-store.js";
+import accounts from './accounts.js';
 
 const start = {
-  createView(request, response) {
+createView(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
     logger.info("Start page loading!");
     
-    const createView = {
-      title: "Welcome to the Playlist app!",
-      info: aboutStore.getAppInfo()
-    };
-  
-    response.render('start', createView);   
-  },
+    if (loggedInUser) {
+      const viewData = {
+        title: "Welcome to the Playlist app!",
+        info: appStore.getAppInfo(),
+        fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
+      };
+      response.render('start', viewData);
+    }
+    else response.redirect('/');    
+},
 };
 
 export default start;
