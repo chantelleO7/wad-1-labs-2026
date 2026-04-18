@@ -47,16 +47,19 @@ const accounts = {
   },
   
   //authenticate function to check user credentials and either render the login page again or the start page.
-  authenticate(request, response) {
-    const user = userStore.getUserByEmail(request.body.email);
-    if (user) {
-      response.cookie('playlist', user.email);
-      logger.info('logging in' + user.email);
-      response.redirect('/start');
-    } else {
-      response.redirect('/login');
-    }
-  },
+authenticate(request, response) {
+  const user = userStore.getUserByEmail(request.body.email);
+  
+  // Check if user exists AND if the password matches
+  if (user && user.password === request.body.password) {
+    response.cookie('playlist', user.email);
+    logger.info('logging in ' + user.email);
+    response.redirect('/start');
+  } else {
+    // If user doesn't exist OR password is wrong, go back to login
+    response.redirect('/login');
+  }
+},
   
  //utility function getCurrentUser to check who is currently logged in
   getCurrentUser (request) {
