@@ -37,13 +37,19 @@ const accounts = {
     response.render('signup', viewData);
   },
   
- //register function to render the registration page for adding a new user
+//register function to render the registration page for adding a new user
   register(request, response) {
     const user = request.body;
     user.id = uuidv4();
     userStore.addUser(user);
-    logger.info('registering' + user.email);
-    response.redirect('/');
+    logger.info('registering ' + user.email);
+
+    // --- AUTO-LOGIN LOGIC START ---
+    // Set the cookie so the app knows who is logged in
+    response.cookie('playlist', user.email);
+    // Redirect them straight to the start page instead of the home page
+    response.redirect('/start');
+    // --- AUTO-LOGIN LOGIC END ---
   },
   
   //authenticate function to check user credentials and either render the login page again or the start page.

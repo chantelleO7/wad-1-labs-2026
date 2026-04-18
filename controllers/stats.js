@@ -1,11 +1,18 @@
 "use strict";
 import logger from "../utils/logger.js";
 import playlistStore from "../models/playlist-store.js";
+import userStore from "../models/user-store.js"; // 1. Add this import
 import accounts from './accounts.js';
 
 const stats = {
   createView(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
+
+    const playlists = playlistStore.getAllPlaylists();
+      const users = userStore.getAllUsers();
+
+      let numPlaylists = playlists.length;
+      let numUsers = users.length; 
 
     if (loggedInUser) {
       logger.info("Stats page loading!");
@@ -32,6 +39,7 @@ const stats = {
       let longestPlaylistTitles = longestPlaylists.map(item => item.title);
       
       const statistics = {
+        displayNumUsers: numUsers,
         displayNumPlaylists: numPlaylists,
         displayNumSongs: numSongs,
         displayAverage: average,
