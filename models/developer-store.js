@@ -4,7 +4,7 @@ export const developerStore = {
        {
         "name":"Stevie",
         "fullname":"Stevie Feliciano",
-        "image":"/stevie.jpg",
+        "image":"images/stevie.jpg",
         "joined":2016,
         "job":"Web Developer",
         "city":"Boston",
@@ -13,7 +13,7 @@ export const developerStore = {
        {
         "name":"Helen",
         "fullname":"Helen Hess",
-        "image":"/helen.jpg",
+        "image":"images/helen.jpg",
         "joined":2013,
         "job":"Art Director",
         "city":"New York",
@@ -22,7 +22,7 @@ export const developerStore = {
        {
         "name":"Jenny",
         "fullname":"Jenny Howe",
-        "image":"/jenny.jpg",
+        "image":"images/jenny.jpg",
         "joined":2014,
         "job":"UX Designer",
         "city":"Manhatten",

@@ -12,7 +12,7 @@ createView(request, response) {
     if (loggedInUser) {
       const viewData = {
         title: "Welcome to the Playlist app!",
-        info: appStore.getAppInfo(),
+        info: aboutStore.getAppInfo(),
         fullname: loggedInUser.firstName + ' ' + loggedInUser.lastName,
       };
       response.render('start', viewData);
