@@ -97,6 +97,33 @@ class JsonStore {
     };
   }
 
-}
+    async deleteFromCloudinary(publicId) {
+    return new Promise((resolve, reject) => {
+      cloudinary.uploader.destroy(publicId, (result, err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(result);
+        }
+      });
+    });
+  }
+
+    async removePlaylist(id, response) {
+    const playlist = this.getPlaylist(id);
+
+    if (playlist.picture && playlist.picture.public_id) {
+      try {
+        await this.store.deleteFromCloudinary(playlist.picture.public_id);
+        logger.info("Cloudinary image deleted");
+      } catch (err) {
+        logger.error("Failed to delete Cloudinary image:", err);
+      }
+    }
+
+    this.store.removeCollection(this.collection, playlist);
+    response();
+  }
+};
 
 export default JsonStore;

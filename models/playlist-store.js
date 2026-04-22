@@ -22,6 +22,10 @@ addSong(id, song) {
     this.store.addItem(this.collection, id, this.array, song);
 },
 
+removeSong(id, songId) {
+    this.store.removeItem(this.collection, id, this.array, songId);
+},
+
   async addPlaylist(playlist, file, response) {
     try {
       playlist.picture = await this.store.addToCloudinary(file);
@@ -32,6 +36,11 @@ addSong(id, song) {
       response(error);
     }
   },
+
+  removePlaylist(id) {
+    const playlist = this.getPlaylist(id);
+    this.store.removeCollection(this.collection, playlist);
+},
 
 editSong(id, songId, updatedSong) {
     this.store.editItem(this.collection, id, songId, this.array, updatedSong);

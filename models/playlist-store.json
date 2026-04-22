@@ -1,4 +1,28 @@
 {
   "playlistCollection": [
+    {
+      "id": "fb375068-926b-432d-b2ce-6dc76fa05b27",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Puca's Playlist",
+      "rating": 4,
+      "songs": [],
+      "date": "2026-04-22T13:41:12.343Z",
+      "picture": {
+        "url": "http://res.cloudinary.com/dv7j6qqti/image/upload/v1776865273/acdulnpqqriih01glndo.jpg",
+        "public_id": "acdulnpqqriih01glndo"
+      }
+    },
+    {
+      "id": "a91700c1-1125-4408-8088-5e450abfa414",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "title": "Bo's Beats",
+      "rating": 5,
+      "songs": [],
+      "date": "2026-04-22T13:59:51.474Z",
+      "picture": {
+        "url": "http://res.cloudinary.com/dv7j6qqti/image/upload/v1776866392/b8o9if9iwozrqxssflfk.jpg",
+        "public_id": "b8o9if9iwozrqxssflfk"
+      }
+    }
   ]
 }
